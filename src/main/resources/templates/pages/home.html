@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body th:fragment="content" th:remove="tag">
+
+<h3>Demo - Please enter number or numbers separated by comma(,). Example 1,2,5</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form th:action="@{/api/v1/game/play/numbers/numberList}"
+              id="playFizzBuzzForm" onkeypress="return event.keyCode != 13;">
+            <div class="alert alert-danger" id="alertBox" style="display: none;">
+                <div id="messageBox"></div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-10 col-xs-12">
+                    <input class="form-control" type="text" placeholder="Enter comma separated numbers here as 1,2,3"
+                           name="numbers"
+                           id="numbers"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-4 col-xs-6 col-md-offset-6 col-xs-offset-6">
+                    <button type="button" class="btn btn-primary" id="playFizzBuzz" style="width: 100%">
+                        Play fizz buzz
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-xs-12">
+                    <div class="panel panel-default" id="resultPanel" style="display: none;">
+                        <div class="panel-body" id="resultPanelBody">
+                            Response will shown here
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>Demo app for Service Flow.</p>
+                <p>Used technologies are below</p>
+                <ul>
+                    <li>Maven</li>
+                    <li>Java 8</li>
+                    <li>Spring boot</li>
+                    <li>Spring data</li>
+                    <li>H2 in-memory Database</li>
+                    <li>Flyway</li>
+                    <li>Lombok</li>
+                    <li>Logback</li>
+                    <li>Thymeleaf</li>
+                    <li>Jquery</li>
+                    <li>Bootstrap</li>
+                    <li>JS</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+
+                <p><strong>NOTE:</strong> If lombok plugin not installed to your IDE please install before import
+                    project source</p>
+                <p>H2 db used for simplicity, you can use any db configuring datasource from <code>application.properties</code>
+                </p>
+                <p>Flyway used for auto migration/creation of DB. So you can simply create and use your own DB to start
+                    the project.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
